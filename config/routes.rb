@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   get '/signup', to: 'users#new'
 
-
+  resources :users
   # get 'static_pages/help'
   # get 'static_pages/about'
   # get 'static_pages/contact'
