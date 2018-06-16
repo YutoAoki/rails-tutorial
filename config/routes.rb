@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   get 'users/new'
 
   get 'user/new'
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to:'sessions#destroy'
   resources :account_activations, only:[:edit]
+  resources :password_resets, only:[:new, :create, :edit, :update]
   # get 'static_pages/help'
   # get 'static_pages/about'
   # get 'static_pages/contact'
