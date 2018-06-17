@@ -1,12 +1,27 @@
-<% if @user.errors.any? %>
+<% if object.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      The form contain <%= pluralize(@user.errors.count, "error") %>
+      The form contain <%= pluralize(object.errors.count, "error") %>
     </div>
     <ul>
-    <% @user.errors.full_messages.each do |msg| %>
+    <% object.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
   </div>
 <% end %>
+
+
+<!-- リスト13.41で上記に書き換え。@micropostにもこの部分を適応するため。 -->
+<!-- <%# if @user.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contain <%#= pluralize(@user.errors.count, "error") %>
+    </div>
+    <ul>
+    <%# @user.errors.full_messages.each do |msg| %>
+      <li><%#= msg %></li>
+    <%# end %>
+    </ul>
+  </div>
+<%# end %> -->
